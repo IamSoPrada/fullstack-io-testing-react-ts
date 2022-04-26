@@ -3,7 +3,7 @@ import { useCartContext } from "../CartContext"
 import { CartItem } from "./CartItem"
 
 export const Cart = () => {
-  const { products, removeFromCart, totalPrice } = useCartContext()
+  const { products = [], removeFromCart, totalPrice } = useCartContext()
   if (!products.length) {
     return (
       <>
@@ -17,7 +17,7 @@ export const Cart = () => {
     <section className="nes-container with-title is-centered">
       <h3 className="title">Cart Summary</h3>
       <div className="cart-items">
-        {products.map((datum) => (
+        {products && products.map((datum) => (
           <CartItem
             key={datum.name}
             product={datum}
