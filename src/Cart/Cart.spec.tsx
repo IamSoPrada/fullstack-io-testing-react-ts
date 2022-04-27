@@ -1,7 +1,6 @@
-import {render, fireEvent} from "@testing-library/react"
+import { fireEvent} from "@testing-library/react"
 import {CartItemProps} from "./CartItem"
 import {useCartContext} from "../CartContext"
-import {Product} from "../shared/types"
 import {Cart} from "./Cart"
 
 
@@ -24,11 +23,11 @@ const useCartContextMock = useCartContext as unknown as jest.Mock<Partial<Return
 
 describe('Cart', ()=> {
 	
-	const product : Product = {
+/* 	const product : Product = {
 		name: 'Product foo', 
 		price: 55,
 		image: '/test.jpg'
-	}
+	} */
 	
 	describe('without products', ()=> {
 		beforeEach(()=> {
